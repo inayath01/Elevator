@@ -6,6 +6,7 @@
         <title>Elevator Details</title>
     </head>
     <body>
+      <h3 align="center">Elevator Details</h3>
         <table class="table">
            <tr>
              <th>Sl.no</th>>  
@@ -343,150 +344,8 @@
                <td>GPIO23</td>
                <td>{{ utc_dt }}</td>
             </tr>
-            <tr>
-               <td>56</td>
-               <td>10000000b81c58d</td>
-               <td>GPIO23</td>
-               <td>{{ utc_dt }}</td>
-            </tr>
-            <tr>
-               <td>57</td>
-               <td>10000000b81c58d</td>
-               <td>GPIO23</td>
-               <td>{{ utc_dt }}</td>
-            </tr>
-            <tr>
-               <td>58</td>
-               <td>10000000b81c58d</td>
-               <td>GPIO23</td>
-               <td>{{ utc_dt }}</td>
-            </tr>
-            <tr>
-               <td>59</td>
-               <td>10000000b81c58d</td>
-               <td>GPIO23</td>
-               <td>{{ utc_dt }}</td>
-            </tr>
-            <tr>
-               <td>60</td>
-               <td>10000000b81c58d</td>
-               <td>GPIO23</td>
-               <td>{{ utc_dt }}</td>
-            </tr>
-            <tr>
-               <td>62</td>
-               <td>10000000b81c58d</td>
-               <td>GPIO23</td>
-               <td>{{ utc_dt }}</td>
-            </tr>
-            <tr>
-               <td>63</td>
-               <td>10000000b81c58d</td>
-               <td>GPIO23</td>
-               <td>{{ utc_dt }}</td>
-            </tr>
-            <tr>
-               <td>64</td>
-               <td>10000000b81c58d</td>
-               <td>GPIO23</td>
-               <td>{{ utc_dt }}</td>
-            </tr>
-            <tr>
-               <td>65</td>
-               <td>10000000b81c58d</td>
-               <td>GPIO23</td>
-               <td>{{ utc_dt }}</td>
-            </tr>
-            <tr>
-               <td>66</td>
-               <td>10000000b81c58d</td>
-               <td>GPIO23</td>
-               <td>{{ utc_dt }}</td>
-            </tr>
-            <tr>
-               <td>67</td>
-               <td>10000000b81c58d</td>
-               <td>GPIO23</td>
-               <td>{{ utc_dt }}</td>
-            </tr>
-            <tr>
-               <td>68</td>
-               <td>10000000b81c58d</td>
-               <td>GPIO23</td>
-               <td>{{ utc_dt }}</td>
-            </tr>
-            <tr>
-               <td>69</td>
-               <td>10000000b81c58d</td>
-               <td>GPIO23</td>
-               <td>{{ utc_dt }}</td>
-            </tr>
-            <tr>
-               <td>70</td>
-               <td>10000000b81c58d</td>
-               <td>GPIO23</td>
-               <td>{{ utc_dt }}</td>
-            </tr>
-            <tr>
-               <td>71</td>
-               <td>10000000b81c58d</td>
-               <td>GPIO23</td>
-               <td>{{ utc_dt }}</td>
-            </tr>
-            <tr>
-               <td>72</td>
-               <td>10000000b81c58d</td>
-               <td>GPIO23</td>
-               <td>{{ utc_dt }}</td>
-            </tr>
-            <tr>
-               <td>73</td>
-               <td>10000000b81c58d</td>
-               <td>GPIO23</td>
-               <td>{{ utc_dt }}</td>
-            </tr>
-            <tr>
-               <td>74</td>
-               <td>10000000b81c58d</td>
-               <td>GPIO23</td>
-               <td>{{ utc_dt }}</td>
-            </tr>
-            <tr>
-               <td>75</td>
-               <td>10000000b81c58d</td>
-               <td>GPIO23</td>
-               <td>{{ utc_dt }}</td>
-            </tr>
-            <tr>
-               <td>76</td>
-               <td>10000000b81c58d</td>
-               <td>GPIO23</td>
-               <td>{{ utc_dt }}</td>
-            </tr>
-            <tr>
-               <td>77</td>
-               <td>10000000b81c58d</td>
-               <td>GPIO23</td>
-               <td>{{ utc_dt }}</td>
-            </tr>
-            <tr>
-               <td>78</td>
-               <td>10000000b81c58d</td>
-               <td>GPIO23</td>
-               <td>{{ utc_dt }}</td>
-            </tr>
-            <tr>
-               <td>79</td>
-               <td>10000000b81c58d</td>
-               <td>GPIO23</td>
-               <td>{{ utc_dt }}</td>
-            </tr>
-            <tr>
-               <td>80</td>
-               <td>10000000b81c58d</td>
-               <td>GPIO23</td>
-               <td>{{ utc_dt }}</td>
-            </tr>
         </table>
     </body>
 </html>
+    
+
