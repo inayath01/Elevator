@@ -1,29 +1,107 @@
-<html>
-   <head>
-      <meta name="viewport" content="width=device-width">
-      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-      <title>Elevator Details</title>
-   </head>
-   <body>
-      <div class="container">
-         <h3 align="center">Elevator Details</h3>
-         <div  class="panel panel-default">
 
-            <div class="panel-body">
-               <div class="table-responsive">
-                  <table id="sample_data" class="table table-bordered table-striped">
-                     <thread>
-                        <tr>
-                           <th>Sl.no</th>
-                           <th>Device Id</th>
-                           <th>Button Id</th>
-                           <th>timestamp</th>
-                        </tr>
-                     </thread>
-                  </table>
-               </div>
-            </div>
-         </div>>  
-      </div>
-   </body>
-</html>
+<!DOCTYPE html>
+<html>
+<head>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+
+.button {
+  background-color:white;
+  margin: 5px;
+  text-decoration-color: black;
+}
+
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+  font-size: large;
+  font-weight: bold;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+.search-container button {
+      float: right;
+      padding: 6px 10px;
+      margin-top: 8px;
+      margin-right: 16px;
+      background: darkcyan;
+      font-size: 17px;
+      border: none;
+      cursor: pointer;
+}
+
+    .search-container {
+      float: right;
+    }
+    .search-container button:hover {
+      background: darkcyan;
+    }
+     
+      .search-container button {
+        float: right;
+        display: block;
+        text-align: center;
+      
+        margin: 0;
+        padding: 14px;
+      }
+</style> 
+</head>
+<body>
+<div class="search-container">
+  <input id="livebox" type="text"  style="width: auto; height: 40px;" type="text" placeholder="Search..." name="search">
+    <button  type="submit"><i class="fa fa-search"></i></button>
+</div>
+<table id="datalist">
+   <title>Elevator Details</title>
+   <h1>Elevator Details</h1>
+<tr>
+  <th>Sl.No</th>
+  <th>Device ID</th>
+  <th>Button ID</th>
+  <th>TimeStamp</th>
+</tr>
+{% for elevator in elevator %}
+<tr>
+  <td>{{ elevator.sl.no }}</td>
+  <td>{{ elevator.deviceid }}</td>
+  <td>{{elevator.buttonid}}</td>
+  <td>{{elevator.timestamp}}</td>
+</tr>
+{% endfor %}
+</table>
+</body>
+
+  <script>
+    $(document).ready(function(){
+        $("#livebox").on("input",function(e){
+            $("#datalist").empty();
+            $.ajax({
+                method:"post",
+                url:"/livesearch",
+                data:{text:$("#livebox").val()},
+                success:function(res){
+                    var data = "<table><tr><th>Device ID</th><th>Button ID</th><th>TimeStamp</th></tr>";
+                    // console.log(res[0]['device id']);
+                    $.each(res,function(index,value){
+                         data += "<tr><td>"+value.deviceid+"</td><td>"+value.buttonid+"</td><td>"+value.timestamp+"</td></tr>";
+
+                    });
+                    data += "</table>";
+                    $("#datalist").html(data);
+                }
+            });
+        });
+    });
+  </script>
+  </html>
