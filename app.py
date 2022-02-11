@@ -1,36 +1,32 @@
-from flask import Flask, render_template,request,redirect,url_for 
-from bson import ObjectId 
-from pymongo import MongoClient
-import os
+from flask import Flask , request , render_template , jsonify , redirect
+from flask_pymongo import PyMongo 
+from bson import json_util
+import json
 
-app = Flask(__name__)
-title = "Elevator Details"
-heading = "Elevator Details"
-
-client = MongoClient("mongodb://127.0.0.1:27017") 
-db = client.elevator    
-elevator = db.elevatordetails 
-
-
-@app.route("/", methods=['POST'])
-def action ():
-	Sl.no=request.values.get("Sl.no")
-	Deviceid=request.values.get("Device id")
-	Buttonid=request.values.get("Button id")
-	Timestamp=request.values.get("Timestamp")
-	return redirect("/")
+app = Flask("__name__") 
+app.config['MONGODB_SETTINGS'] ={
+    'HOSTNAME': '117.247.195.180',
+    'PORTNAME' :  '27017',
+    'DB_NAME': 'Elevator',
+    'COLLECTION_NAME' : 'elevator details',
+}
 
 
-@app.route("/", methods=['GET'])
-def search():
-	key=request.values.get("key")
-	refer=request.values.get("refer")
-	if(key=="_id"):
-		elevator_l = elevator.find({refer:ObjectId(key)})
-	else:
-		elevator_l = elevator.find({refer:key})
-	return render_template('home.html',elevator=elevator_l,t=title,h=heading)
+@app.route("/" , methods=['GET','POST'])
+def myhome():
+    if request.method=='POST':
+        a = request.form['elevator_sl.no']
+        b = request.form['elevator_deviceid']
+        c = request.form["elevators_buttonid"]
+        d = request.form["elevator_timestamp"]
+        print(a,b,c,d)
+    return render_template("list.html")
 
-if __name__ == "__main__":
+@app.route("/" , methods=['GET'])
+def elevator():
+    elevators = db.elevator.find()
+    elevators = list(elevators)
+    return render_template('list.html')
 
-    app.run()
+if __name__ == '__main__':
+    app.run(debug=True)
